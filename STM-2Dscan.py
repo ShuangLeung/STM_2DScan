@@ -64,7 +64,7 @@ Important Notes:
    cost a few seconds (even reach to the order of minutes).
 
 ---------------------------------------------------------------------------------
-Authors: ShuangLeung (sleung1924@gmail.com)                         
+Author: ShuangLeung (sleung1924@gmail.com)                         
 Date of last version: 2019/08/30
 ---------------------------------------------------------------------------------
 '''
