@@ -36,8 +36,7 @@ Important Notes:
 4. Reading the charge density file is a time-consuming progress, which may cost a few seconds (even reach to the order of minutes).
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-Authors: ShuangLeung                                                      
+Author: ShuangLeung                                                      
 Email: sleung1924@gmail.com                         
 Date of last version: 2019/08/30
-
 ----------------------------------------------------------------------------------------------------------------------------------------
