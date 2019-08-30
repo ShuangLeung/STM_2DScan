@@ -34,5 +34,4 @@ Important Notes:
 3. Multifarious colormaps included with matplotlib are alternative. See https://matplotlib.org/examples/color/colormaps_reference.html      for more details.
 
 4. Reading the charge density file is a time-consuming progress, which may cost a few seconds (even reach to the order of minutes).
-
 ----------------------------------------------------------------------------------------------------------------------------------------
