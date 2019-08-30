@@ -1,14 +1,14 @@
 # STM_2DScan
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-# Introduction:
+Introduction:
 
 STM-2DScan.py is a postprocessing script for VASP code to generate STM images based on DFT-calculations. It firstly imports volumetric data from a file with CHGCAR format (e.g. CHGCAR, PARCHG and CURRENT (output data file of BSKAN)...) and then interpolates the data onto specified two-dimensional (2D) slice in an arbitrary xy-plane, which will be saved as a '.png' format file.
 
 This script is a free software, which means that you can redistribute it or modify it under the terms of the GNU General Public License. Of course, any feedback of modifications, bug fixes and improvements is appreciate.
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-# Usage:
+Usage:
 
 Step1. Setting the height of tip position. For convenience, an alternative option is to set a range of heights in order to generate a          series of corresponding 2D slices at a time. 
 
@@ -19,7 +19,7 @@ Step3. Optionally, you can replicate the unit-cell by inputting the cell ranges 
 Step4. Plot the 2D contour by using matplotlib and save as a .png format image. Multifarious colormaps included with matplotlib are            available, allowing you to choose your most favorite one.
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-# Important Notes: 
+Important Notes: 
 
 1. This script runs in the Python3 environment.
 
