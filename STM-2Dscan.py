@@ -119,9 +119,7 @@ cell_lengths = np.sqrt(np.dot(unit_cell,unit_cell.transpose()).diagonal())
 inputstr2=input("Select the way of setting the height of tip position:\n %s %s %s" % ("1: Setting a specified height;[Default option]\n",
 												"2: Specifying a range of heights.\n",
 												"Enter your option [1/2]:"))
-
 height_option = inputstr2.strip()
-
 # Set the default option.
 height_options = ["1","2"]
 if height_option not in height_options:
@@ -135,8 +133,6 @@ inputstr3 = input("\nSelect the STM scan mode to obtain 2D slice for visualizati
 												"2: Constant-current mode;\n",
 												"3: 2D-slice at a specified height.\n",
 												"Enter your option [1/2/3]:"))
-
-
 scan_mode_option = inputstr3.strip()
 # Set the default option.
 scan_mode_options = ["1","2","3"]
@@ -272,7 +268,6 @@ if colormaps_option in colormaps_options:
 else:
 	print("\n*** WARNING: the input has syntax errors. Select the default option automatically. ***\n")
 	cmap_No = 0
-
 
 print("\nGenerating STM-2Dslice images...\n")
 for h in heights:
