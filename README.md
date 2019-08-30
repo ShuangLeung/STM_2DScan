@@ -44,7 +44,7 @@ Important Notes:
 
 1. This script runs in the Python3 environment.
 
-2. The script depends on the following python modules and packages:
+2. The script depends on the following python modules and packages:                                                                     
     numpy - http://numpy.scipy.org/                                  
     ase - https://wiki.fysik.dtu.dk/ase/            
     matplotlib - http://matplotlib.sourceforge.net/
