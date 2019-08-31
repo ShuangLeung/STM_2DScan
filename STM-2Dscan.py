@@ -295,7 +295,7 @@ for h in heights:
 		
 	for i in range(supercell_xngridpoints):
 		for j in range(supercell_yngridpoints):
-			supercell_xarray[i][j] = float(i)/float(supercell_xngridpoints)*cell_lengths[0]*m+float(j)/float(supercell_yngridpnoints)*ytox*n
+			supercell_xarray[i][j] = float(i)/float(supercell_xngridpoints)*cell_lengths[0]*m+float(j)/float(supercell_yngridpoints)*ytox*n
 			supercell_yarray[i][j] = float(j)/float(supercell_yngridpoints)*ynormal*n
 			mi = i%(ngridpoints[0]-1)
 			nj = j%(ngridpoints[1]-1)
