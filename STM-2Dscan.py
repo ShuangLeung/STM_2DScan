@@ -112,11 +112,11 @@ else:
 ngridpoints = np.array(density.shape)
 
 # Read scaling factor and unit cell of the crystal structure.
-unit_cell=atoms.get_cell()
+unit_cell = atoms.get_cell()
 cell_lengths = np.sqrt(np.dot(unit_cell,unit_cell.transpose()).diagonal())
 
 # Select the way of setting the height of tip position to make the 2D slice.
-inputstr2=input("Select the way of setting the height of tip position:\n %s %s %s" % ("1: Setting a specified height;[Default option]\n",
+inputstr2 = input("Select the way of setting the height of tip position:\n %s %s %s" % ("1: Setting a specified height;[Default option]\n",
 												"2: Specifying a range of heights.\n",
 												"Enter your option [1/2]:"))
 height_option = inputstr2.strip()
@@ -147,7 +147,7 @@ if height_option == "1" :
 	while True:
 		try:
 			inputstr4 = input("\nEnter the height in Angstroms along c vector to make 2D slice：")
-			height=float(inputstr4.strip())
+			height = float(inputstr4.strip())
 			heights.append(height)
 			break
 		except:
@@ -159,7 +159,7 @@ else:
 	while True:
 		try:
 			inputstr5 = input("\nEnter the initial height in Angstroms along c vector to make 2D slice:")
-			height1=float(inputstr5.strip())
+			height1 = float(inputstr5.strip())
 			break
 		except:
 			print("\n*** ERROR: The input is incorrect!!! Please retype again. ***\n")
@@ -221,12 +221,12 @@ while True:
 		print("\n*** ERROR: The input is not an integer!!! Please input again. ***\n")
 
 # The size of grids along a/b vector.
-supercell_xngridpoints=(ngridpoints[0]-1)*m+1
-supercell_yngridpoints=(ngridpoints[1]-1)*n+1
+supercell_xngridpoints = (ngridpoints[0]-1)*m+1
+supercell_yngridpoints = (ngridpoints[1]-1)*n+1
 
 # Make arrays of x and y values.
-supercell_xarray=np.zeros((supercell_xngridpoints,supercell_yngridpoints),np.float)
-supercell_yarray=np.zeros((supercell_xngridpoints,supercell_yngridpoints),np.float)
+supercell_xarray = np.zeros((supercell_xngridpoints,supercell_yngridpoints),np.float)
+supercell_yarray = np.zeros((supercell_xngridpoints,supercell_yngridpoints),np.float)
 
 # Make arrays of supercell_density2D/I/H with the same dimensions as x/y arrays.
 supercell_density2D = np.zeros((supercell_xngridpoints,supercell_yngridpoints),np.float)
@@ -234,10 +234,10 @@ I = np.zeros((supercell_xngridpoints,supercell_yngridpoints),np.float)
 H = np.zeros((supercell_xngridpoints,supercell_yngridpoints),np.float)
 
 #Find projection of b vector onto a vector.
-ytox=np.dot(unit_cell[0],unit_cell[1].T)/cell_lengths[0]
+ytox = np.dot(unit_cell[0],unit_cell[1].T)/cell_lengths[0]
 #Find component of b vector perpendicular to a vector.
-ynormal=np.cross(unit_cell[0],unit_cell[1].T)/cell_lengths[0]
-ynormal=np.sqrt(np.dot(ynormal,ynormal.T))
+ynormal = np.cross(unit_cell[0],unit_cell[1].T)/cell_lengths[0]
+ynormal = np.sqrt(np.dot(ynormal,ynormal.T))
 
 # Plot the STM-2Dscan images in matplotlib.
 # Multifarious colormaps included with matplotlib are alternative.
@@ -276,7 +276,7 @@ for h in heights:
 		n1 = h/cell_lengths[2]*ngridpoints[2]
 		dn1 = n1-np.floor(n1)
 		n1 = int(n1)%ngridpoints[2]
-		ldos= (1-dn1)*density[:,:,n1]+dn1*density[:,:,(n1+1)%ngridpoints[2]]
+		ldos = (1-dn1)*density[:,:,n1]+dn1*density[:,:,(n1+1)%ngridpoints[2]]
 
 	# Contant current mode.
 	elif scan_mode_option == "2":
@@ -284,19 +284,19 @@ for h in heights:
 		dn2 = n2-np.floor(n2)
 		n2 = int(n2)%ngridpoints[2]
 		# Get the averaged current.
-		averaged_current= ((1-dn2)*density[:,:,n2].mean()+dn2*density[:,:,(n2+1)%ngridpoints[2]].mean())
+		averaged_current = ((1-dn2)*density[:,:,n2].mean()+dn2*density[:,:,(n2+1)%ngridpoints[2]].mean())
 		c1 = density[:,:,n2]
 		c2 = density[:,:,(n2+1)%ngridpoints[2]]
 	
 	# 2D-slice at a specified height.
 	else:
-		plane_index=int(round(h/cell_lengths[2]*ngridpoints[2]))%ngridpoints[2]
-		density2D=density[:,:,plane_index]
+		plane_index = int(round(h/cell_lengths[2]*ngridpoints[2]))%ngridpoints[2]
+		density2D = density[:,:,plane_index]
 
 	for i in range(supercell_xngridpoints):
 		for j in range(supercell_yngridpoints):
-			supercell_xarray[i][j]=float(i)/float(supercell_xngridpoints)*cell_lengths[0]*m+float(j)/float(supercell_yngridpoints)*ytox*n
-			supercell_yarray[i][j]=float(j)/float(supercell_yngridpoints)*ynormal*n
+			supercell_xarray[i][j] = float(i)/float(supercell_xngridpoints)*cell_lengths[0]*m+float(j)/float(supercell_yngridpnoints)*ytox*
+			supercell_yarray[i][j] = float(j)/float(supercell_yngridpoints)*ynormal*n
 			mi = i%(ngridpoints[0]-1)
 			nj = j%(ngridpoints[1]-1)
 
