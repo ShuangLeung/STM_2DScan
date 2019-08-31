@@ -281,8 +281,8 @@ for h in heights:
 	# Contant current mode.
 	elif scan_mode_option == "2":
 		n2 = h/cell_lengths[2]*ngridpoints[2]
-		dn2 = n2 - np.floor(n2)
-		n2 = int(n2) % ngridpoints[2]
+		dn2 = n2-np.floor(n2)
+		n2 = int(n2)%ngridpoints[2]
 		# Get the averaged current.
 		averaged_current= ((1-dn2)*density[:,:,n2].mean()+dn2*density[:,:,(n2+1)%ngridpoints[2]].mean())
 		c1 = density[:,:,n2]
