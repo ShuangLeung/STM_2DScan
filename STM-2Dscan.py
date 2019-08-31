@@ -173,13 +173,13 @@ else:
 
 	# Find the closest planes corresponding to the input heights.
 	if scan_mode_option == "3":
-		plane_index1 = int(round(height1/cell_lengths[2]*ngridpoints[2]))
-		plane_index2 = int(round(height2/cell_lengths[2]*ngridpoints[2]))
+		plane_index1 = int(round(height1/cell_lengths[2]*ngridpoints[2]))%ngridpoints[2]
+		plane_index2 = int(round(height2/cell_lengths[2]*ngridpoints[2]))%ngridpoints[2]
 
 	# Find the integer planes (grid points) corresponding to the input heights.
 	else:
-		plane_index1 = int(height1/cell_lengths[2]*ngridpoints[2])
-		plane_index2 = int(height2/cell_lengths[2]*ngridpoints[2])
+		plane_index1 = int(height1/cell_lengths[2]*ngridpoints[2])%ngridpoints[2]
+		plane_index2 = int(height2/cell_lengths[2]*ngridpoints[2])%ngridpoints[2]
 
 	# Determine the maximal linear insertion points.
 	max_inspoint = abs(plane_index2-plane_index1)+1
@@ -290,7 +290,7 @@ for h in heights:
 	
 	# 2D-slice at a specified height.
 	else:
-		plane_index=int(round(h/cell_lengths[2]*ngridpoints[2]))
+		plane_index=int(round(h/cell_lengths[2]*ngridpoints[2]))%ngridpoints[2]
 		density2D=density[:,:,plane_index]
 
 	for i in range(supercell_xngridpoints):
