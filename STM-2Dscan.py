@@ -305,7 +305,7 @@ for h in heights:
 
 			elif scan_mode_option == "2":
 				if c2[mi][nj]-c1[mi][nj] == 0:
-					H[i][j] = n1*cell_lengths[2]/ngridpoints[2]
+					H[i][j] = n2*cell_lengths[2]/ngridpoints[2]
 
 				else:
 					H[i][j] = (n2+(averaged_current-c1[mi][nj])/(c2[mi][nj]-c1[mi][nj]))*cell_lengths[2]/ngridpoints[2]
