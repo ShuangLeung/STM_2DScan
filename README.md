@@ -23,7 +23,7 @@ Step2. Selecting a scan mode to obtain the 2D slice for visualization. There are
 Step3. Optionally, you can replicate the unit-cell by inputting the cell ranges along a and b vectors, respectively.
 
 Step4. Plot the 2D contour by using matplotlib and save as a .png format image. Multifarious colormaps included with matplotlib are
-       available, allowing you to choose your most favorite one.
+       available, allowing you to choose your favorite one.
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 Important Notes: 
