@@ -40,7 +40,7 @@ Step3. Optionally, you can replicate the unit-cell by inputting the cell ranges
 
 Step4. Plot the 2D contour by using matplotlib and save as a .png format image.
        Multifarious colormaps included with matplotlib are available, allowing 
-       you to choose your most favorite one.
+       you to choose your favorite one.
 
 ---------------------------------------------------------------------------------
 Important Notes: 
@@ -77,7 +77,6 @@ import matplotlib.cm as cm
 from ase.calculators.vasp import VaspChargeDensity
 
 print("-"*86)
-starttime = time.perf_counter()
 print("Starting the program at")
 print(time.strftime("%Y-%m-%d %H:%M:%S"))
 print("-"*86)
@@ -340,7 +339,6 @@ for h in heights:
 print("Done!\n")
 
 print("-"*86)
-starttime = time.perf_counter()
 print("Ending program at")
 print(time.strftime("%Y-%m-%d %H:%M:%S"))
 print("-"*86)
